@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Agentic Software Delivery Roadmap 2026</title>
+    <meta name="description" content="Roadmap for Agentic Software Delivery for 2026">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Reveal.js Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/dracula.min.css"
+        id="theme">
+
+    <!-- FontAwesome for Visual Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Elegant Styling Overrides */
+        .reveal h1,
+        .reveal h2,
+        .reveal h3,
+        .reveal h4 {
+            text-transform: none;
+            letter-spacing: -0.02em;
+            font-weight: 600;
+        }
+
+        .reveal h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .reveal h2 {
+            color: #f8f8f2;
+        }
+
+        .reveal h3 {
+            color: #8be9fd;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 0.8em;
+            color: #6272a4;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .highlight-text {
+            color: #ff79c6;
+            font-weight: bold;
+        }
+
+        .milestone-text {
+            color: #50fa7b;
+            font-weight: bold;
+        }
+
+        /* Glassmorphism background filter for text */
+        .glass-panel {
+            background: rgba(40, 42, 54, 0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Roadmap Visual Cards */
+        .roadmap-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .roadmap-card {
+            background: rgba(68, 71, 90, 0.4);
+            border: 1px solid rgba(139, 233, 253, 0.2);
+            border-radius: 12px;
+            padding: 25px 15px;
+            flex: 1;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roadmap-card:hover {
+            transform: translateY(-10px);
+            border-color: #8be9fd;
+            box-shadow: 0 10px 20px rgba(139, 233, 253, 0.15);
+            background: rgba(68, 71, 90, 0.8);
+        }
+
+        .roadmap-card i {
+            font-size: 2.2em;
+            color: #bd93f9;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .roadmap-card h4 {
+            font-size: 0.8em;
+            color: #f8f8f2;
+            margin: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .roadmap-card p {
+            font-size: 0.55em;
+            line-height: 1.4;
+            color: #bfcbcf;
+            text-align: left;
+        }
+
+        .card-milestone {
+            margin-top: 15px;
+            font-size: 0.5em;
+            color: #50fa7b;
+            background: rgba(80, 250, 123, 0.1);
+            padding: 8px;
+            border-radius: 6px;
+            border-left: 3px solid #50fa7b;
+            text-align: left;
+        }
+
+        /* Matrix Table Overrides */
+        .reveal table.matrix-table {
+            font-size: 0.5em;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 20px;
+        }
+
+        .matrix-table th {
+            background-color: rgba(98, 114, 164, 0.3);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 15px !important;
+            border-bottom: 2px solid #8be9fd;
+            text-align: left;
+        }
+
+        .matrix-table td {
+            padding: 15px !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            vertical-align: top;
+        }
+
+        .matrix-table tr:hover td {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .col-human {
+            color: #ffb86c;
+        }
+
+        /* Orange */
+        .col-agent {
+            color: #8be9fd;
+        }
+
+        /* Cyan */
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-box {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            color: #50fa7b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 0.6em;
+            color: #f8f8f2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-desc {
+            font-size: 0.5em;
+            color: #6272a4;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Title Slide with generated abstract mesh background -->
+            <section
+                data-background-image="/Users/Vikram/.gemini/antigravity/brain/e1ff8039-caec-4632-927a-e02aaf8757de/bg_neural_mesh_1771897204937.png"
+                data-background-opacity="0.3">
+                <div class="glass-panel">
+                    <i class="fas fa-network-wired" style="font-size: 3em; color: #8be9fd; margin-bottom: 20px;"></i>
+                    <h1>Agentic Software Delivery</h1>
+                    <p class="subtitle" style="font-size: 1.2em;">Roadmap for 2026</p>
+                    <p style="font-size: 0.8em; color: #bfcbcf; margin-top: 20px;">Transitioning from Shadow Mode to the
+                        Agentic Mesh</p>
+                </div>
+            </section>
+
+            <!-- Overview -->
+            <section>
+                <h2>The Agentic Model</h2>
+                <div style="display: flex; align-items: center; gap: 40px; margin-top: 40px; text-align: left;">
+                    <div style="flex: 1;">
+                        <img src="https://img.icons8.com/nolan/256/1A6DFF/C822FF/artificial-intelligence.png"
+                            style="width: 200px; background: none; border: none; box-shadow: none;" alt="AI Icon">
+                    </div>
+                    <div style="flex: 2; font-size: 0.8em; line-height: 1.6;">
+                        <p>This is a transition toward an <strong>autonomous, self-healing SDLC</strong>.</p>
+                        <p>Agents assist across the <em>entire lifecycle</em>:</p>
+                        <ul style="color: #ffb86c;">
+                            <li><i class="fas fa-check-circle" style="font-size: 0.8em;"></i> Requirements &amp; Design
+                            </li>
+                            <li><i class="fas fa-check-circle" style="font-size: 0.8em;"></i> Code Generation</li>
+                            <li><i class="fas fa-check-circle" style="font-size: 0.8em;"></i> Automated Testing</li>
+                            <li><i class="fas fa-check-circle" style="font-size: 0.8em;"></i> Production Recovery</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visual Roadmap -->
+            <section data-auto-animate>
+                <h2>Year 1: The Transition Path</h2>
+                <p class="subtitle">12-Month Agentic Transformation</p>
+
+                <div class="roadmap-container">
+                    <!-- Q1 -->
+                    <div class="roadmap-card fragment fade-up" data-fragment-index="1">
+                        <i class="fas fa-database"></i>
+                        <h4>Q1: Foundation</h4>
+                        <p><strong>Crawl.</strong> Focus on data infra & establishing "Shadow" agents.</p>
+                        <p><i class="fas fa-angle-right" style="font-size: 0.8em; margin: 0; display: inline;"></i>
+                            Audit workflows</p>
+                        <p><i class="fas fa-angle-right" style="font-size: 0.8em; margin: 0; display: inline;"></i>
+                            Knowledge Indexing</p>
+                        <div class="card-milestone">
+                            <i class="fas fa-flag"></i> "Agentic Sandbox" operational
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="roadmap-card fragment fade-up" data-fragment-index="2">
+                        <i class="fas fa-laptop-code"></i>
+                        <h4>Q2: Workbench</h4>
+                        <p><strong>Walk.</strong> Augment UX and early SDLC phases.</p>
+                        <p><i class="fas fa-angle-right" style="font-size: 0.8em; margin: 0; display: inline;"></i>
+                            Requirement Analysis</p>
+                        <p><i class="fas fa-angle-right" style="font-size: 0.8em; margin: 0; display: inline;"></i>
+                            Pre-commit Guardians</p>
+                        <div class="card-milestone">
+                            <i class="fas fa-flag"></i> 50% PRs pre-reviewed
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="roadmap-card fragment fade-up" data-fragment-index="3">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Q3: QA & Pipelines</h4>
+                        <p><strong>Run.</strong> Shift agents into active delivery.</p>
+                        <p><i class="fas fa-angle-right" style="font-size: 0.8em; margin: 0; display: inline;"></i>
+                            Self-Healing Tests</p>
+                        <p><i class="fas fa-angle-right" style="font-size: 0.8em; margin: 0; display: inline;"></i>
+                            Autonomous Canary</p>
+                        <div class="card-milestone">
+                            <i class="fas fa-flag"></i> First Zero-Touch Deploy
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="roadmap-card fragment fade-up" data-fragment-index="4">
+                        <i class="fas fa-project-diagram"></i>
+                        <h4>Q4: Agentic Mesh</h4>
+                        <p><strong>Scale.</strong> Cross-functional orchestration.</p>
+                        <p><i class="fas fa-angle-right" style="font-size: 0.8em; margin: 0; display: inline;"></i>
+                            Production Sentinels</p>
+                        <p><i class="fas fa-angle-right" style="font-size: 0.8em; margin: 0; display: inline;"></i>
+                            Multi-Agent Loops</p>
+                        <div class="card-milestone">
+                            <i class="fas fa-flag"></i> Full trace autonomy
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Human-Agent Responsibility Matrix -->
+            <section data-background-color="#282a36">
+                <h2>Responsibility Matrix</h2>
+                <p class="subtitle">Human-in-the-Loop Hand-off Triggers</p>
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th><i class="fas fa-user col-human"></i> Human Owner</th>
+                            <th><i class="fas fa-robot col-agent"></i> Agent Orchestrator</th>
+                            <th><i class="fas fa-handshake milestone-text"></i> Handoff Trigger</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight:bold;">Requirements & Design</td>
+                            <td class="col-human">Define Intent, Strategy, Architecture Approval</td>
+                            <td class="col-agent">Backlog ingestion, ADR referencing, Ticket breakdown</td>
+                            <td><span class="milestone-text">Approved Design Doc</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold;">Code Generation</td>
+                            <td class="col-human">Code Review, High-level Logic Steering</td>
+                            <td class="col-agent">Boilerplate generation, Unit tests, Lint fixes</td>
+                            <td><span class="milestone-text">PR Checks Passed</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold;">Build & QA</td>
+                            <td class="col-human">Edge-case Validation, Release Approval</td>
+                            <td class="col-agent">Flaky test remediation, Integration suites</td>
+                            <td><span class="milestone-text">Test Suite Green</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold;">Deployment</td>
+                            <td class="col-human">Rollback Decisions, Blast Radius Definitions</td>
+                            <td class="col-agent">Canary shifting, Telemetry gathering</td>
+                            <td><span class="milestone-text">Deployment Stable</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold;">Operations</td>
+                            <td class="col-human">Root Cause Resolution, Major Incident Comms</td>
+                            <td class="col-agent">Log aggregation, Minor self-healing, RCA Drafts</td>
+                            <td><span class="milestone-text">Drafted Postmortem</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Metrics grid -->
+            <section>
+                <h2>Key Performance Indicators</h2>
+                <p class="subtitle">Agentic Efficiency Categories</p>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value">30%</div>
+                        <div class="stat-label">Toil Reduction</div>
+                        <div class="stat-desc">Decrease in manual ticket updates & documentation</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">50%</div>
+                        <div class="stat-label">Faster Reviews</div>
+                        <div class="stat-desc">Reduction in Mean Time to Review (MTTRv)</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">20%</div>
+                        <div class="stat-label">Less Defects</div>
+                        <div class="stat-desc">Reduction in bugs reaching staging/UAT environments</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">5x</div>
+                        <div class="stat-label">Decision Turn</div>
+                        <div class="stat-desc">Average actions taken before human intervention</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">15%</div>
+                        <div class="stat-label">Auto-Healing</div>
+                        <div class="stat-desc">Minor production alerts resolved autonomously</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">>3x</div>
+                        <div class="stat-label">ROI Ratio</div>
+                        <div class="stat-desc">Cost of AI tokens vs. Engineering hours saved</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Critical Success Factors -->
+            <section>
+                <h2>Critical Success Factors</h2>
+                <div
+                    style="text-align: left; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; margin-top: 30px;">
+                    <div style="margin-bottom: 25px;">
+                        <span style="font-size: 1.2em; color: #ff79c6;"><i class="fas fa-brain"></i> Computable
+                            Truth</span>
+                        <p style="font-size: 0.6em; color: #f8f8f2; margin-top: 5px;">Agents are only as good as your
+                            docs. Subjective "vibes" lead to hallucinations. Structured data leads to execution.</p>
+                    </div>
+                    <div style="margin-bottom: 25px;">
+                        <span style="font-size: 1.2em; color: #f1fa8c;"><i class="fas fa-shield-alt"></i> The 5-Step
+                            Rule</span>
+                        <p style="font-size: 0.6em; color: #f8f8f2; margin-top: 5px;">Limit initial agents to workflows
+                            of 5 steps or fewer before requiring human approval to prevent cascading logic errors.</p>
+                    </div>
+                    <div>
+                        <span style="font-size: 1.2em; color: #8be9fd;"><i class="fas fa-eye"></i> Absolute
+                            Observability</span>
+                        <p style="font-size: 0.6em; color: #f8f8f2; margin-top: 5px;">You cannot govern what you cannot
+                            see. Use <span class="highlight-text">OpenTelemetry</span> to trace agent "thoughts" like
+                            microservices.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- End -->
+            <section
+                data-background-image="/Users/Vikram/.gemini/antigravity/brain/e1ff8039-caec-4632-927a-e02aaf8757de/bg_neural_mesh_1771897204937.png"
+                data-background-opacity="0.3">
+                <div class="glass-panel">
+                    <h2>Ready to build the <span class="highlight-text">Mesh</span>?</h2>
+                    <p style="margin-top: 30px;"><i class="fas fa-power-off"
+                            style="color: #50fa7b; font-size: 2em;"></i></p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            transition: 'fade', // Slick fade transition
+            center: true,
+            margin: 0.1,
+            disableLayout: false
+        });
+    </script>
+</body>
+
+</html>
